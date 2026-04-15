@@ -139,15 +139,22 @@ function leggTilFirkant() {
 
 function tegnTrapes(e) {
     let valgtFirkant = e.target.id;
-    
+    let x,y = 0;
     var c = document.querySelector("canvas");
     var ctx = c.getContext("2d");
     ctx.clearRect(0,0,1000,500)
-    ctx.moveTo(trapesData[valgtFirkant].Forskyvning, 0);
-    ctx.lineTo(trapesData[valgtFirkant].Topplinje, 0);
-    ctx.lineTo(trapesData[valgtFirkant].Bunnlinje, trapesData[valgtFirkant].Hoyde);
-    ctx.lineTo(0, trapesData[valgtFirkant].Hoyde);
+    ctx.beginPath();
+    x += trapesData[valgtFirkant].Forskyvning*5;
+    ctx.moveTo(x,y);
+    x += trapesData[valgtFirkant].Topplinje*5;
+    ctx.lineTo(x,y);
+    x = trapesData[valgtFirkant].Bunnlinje*5;
+    y = trapesData[valgtFirkant].Hoyde*5;
+    ctx.lineTo(x,y);
+    ctx.lineTo(x,y);
+ ctx.closePath();
+
     ctx.fillStyle = "#4800ff";
     ctx.fill();
-
+   
 }
