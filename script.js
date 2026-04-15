@@ -139,7 +139,8 @@ function leggTilFirkant() {
 
 function tegnTrapes(e) {
     let valgtFirkant = e.target.id;
-    let x,y = 0;
+    let x = 0;
+    let y = 0;
     var c = document.querySelector("canvas");
     var ctx = c.getContext("2d");
     ctx.clearRect(0,0,1000,500)
@@ -151,6 +152,7 @@ function tegnTrapes(e) {
     x = trapesData[valgtFirkant].Bunnlinje*5;
     y = trapesData[valgtFirkant].Hoyde*5;
     ctx.lineTo(x,y);
+    x = 0;
     ctx.lineTo(x,y);
  ctx.closePath();
 
